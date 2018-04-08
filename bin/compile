@@ -3,6 +3,11 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+speak "BUILD_DIR = $BUILD_DIR" 
+speak "CACHE_DIR = $CACHE_DIR" 
+speak "ENV_DIR = $ENV_DIR" 
+speak "PATH = $PATH"
+
 export PATH="$BUILD_DIR/.heroku/node/bin:$BUILD_DIR/bin:$BUILD_DIR/node_modules/.bin:$PATH"
 cd $BUILD_DIR
 bower install --config.storage.packages=vendor/bower/packages --config.storage.registry=vendor/bower/registry --config.tmp=vendor/bower/tmp
